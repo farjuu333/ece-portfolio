@@ -24,16 +24,30 @@ export function ContactSection() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    // Simulate glassmorphic form sending
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 900);
+
+    const formattedMessage = `*New Inquiry from Portfolio*
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || "N/A"}
+Subject: ${formData.subject}
+Message: ${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(formattedMessage);
+    const whatsappUrl = `https://wa.me/8801777045300?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "Thesis Project / Hardware Consultation",
+      message: "",
+    });
+    setSubmitted(true);
   };
 
   return (
@@ -211,30 +225,31 @@ export function ContactSection() {
                 </p>
               </div>
 
-              {submitted ? (
+              {submitted && (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center py-12 text-center gap-4 bg-[#00FF88]/5 border border-[#00FF88]/20 rounded-2xl p-8"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center justify-between gap-3 p-4 rounded-xl bg-[#00FF88]/10 border border-[#00FF88]/30 text-white text-xs"
                 >
-                  <div className="p-4 rounded-full bg-[#00FF88]/10 text-[#00FF88]">
-                    <CheckCircle className="w-10 h-10" />
+                  <div className="flex items-center gap-2.5">
+                    <CheckCircle className="w-5 h-5 text-[#00FF88] shrink-0" />
+                    <div>
+                      <span className="font-bold text-[#00FF88] block">Inquiry Opened in WhatsApp!</span>
+                      <span className="text-slate-300">The form has been cleared and is ready for another message.</span>
+                    </div>
                   </div>
-                  <h4 className="font-heading text-xl font-bold text-white">
-                    Message Sent Successfully!
-                  </h4>
-                  <p className="text-sm text-[#94A3B8] max-w-md">
-                    Thank you for reaching out. Md. Morsalin Khan Noyon will review your message and reply via email or phone shortly.
-                  </p>
                   <button
+                    type="button"
                     onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-xl neon-button-outline text-xs font-mono"
+                    className="text-slate-400 hover:text-white text-xs font-mono px-2 py-1"
+                    aria-label="Dismiss message"
                   >
-                    Send Another Message
+                    ✕
                   </button>
                 </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              )}
+
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Name Input */}
                     <div className="flex flex-col gap-1.5">
@@ -341,24 +356,13 @@ export function ContactSection() {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    disabled={loading}
                     className="mt-2 w-full flex items-center justify-center gap-2 py-3.5 rounded-xl neon-button text-sm font-semibold tracking-wide"
                     data-cursor-hover
                   >
-                    {loading ? (
-                      <span className="flex items-center gap-2">
-                        <span className="animate-spin h-4 w-4 border-2 border-dark-900 border-t-transparent rounded-full" />
-                        Transmitting Message...
-                      </span>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 fill-current" />
-                        <span>Send Message</span>
-                      </>
-                    )}
+                    <Send className="w-4 h-4 fill-current" />
+                    <span>Send Message via WhatsApp</span>
                   </motion.button>
                 </form>
-              )}
             </div>
           </GlassCard>
         </motion.div>
