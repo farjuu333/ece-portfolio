@@ -62,9 +62,7 @@ export function AboutFounderSection() {
             Engineering Rigor &amp; Hardware Entrepreneurship
           </h2>
         </div>
-        <p className="text-sm text-[#94A3B8] max-w-lg leading-relaxed">
-          Bridging academic research at IST Dhanmondi with commercial-grade power innovation and research supplies through Nexhardtech Power Ltd.
-        </p>
+
       </motion.div>
 
       {/* Career Objective Feature Card */}
