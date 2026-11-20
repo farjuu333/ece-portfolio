@@ -136,8 +136,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "IPS Connection, Inverter Configuration & Operation", highlight: true },
       { name: "Earth resistance test & Grounding systems", highlight: true },
       { name: "Motor Testing & Insulation diagnosis", highlight: true },
-      { name: "Change Over Switch (AC & DC control)" },
-      { name: "Three Phase Meter Connection & Conduit Pipe wiring" },
+      { name: "Change Over Switch (AC & DC control)", highlight: true },
+      { name: "Three Phase Meter Connection & Conduit Pipe wiring", highlight: true },
     ],
   },
   {
@@ -162,13 +162,13 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     subtitle: "Embedded Firmware & Cisco Network Architecture",
     category: "programming-networking",
     skills: [
-      { name: "HTML & Web Markup Fundamentals", highlight: true },
-      { name: "C Programming (Embedded logic & algorithms)", highlight: true },
+      { name: "HTML", highlight: true },
+      { name: "C Programming (Embedded logic)", highlight: true },
       { name: "Networking (CCNA - Routing, Switching, IP Services)", highlight: true },
       { name: "IPv4 & IPv6 Subnetting & Address Management", highlight: true },
-      { name: "VLAN Segmentation & Inter-VLAN Routing" },
-      { name: "Network Access, Security, LAN, WAN & VPN" },
-      { name: "Embedded C++ in Arduino IDE" },
+      { name: "VLAN Segmentation & Inter-VLAN Routing", highlight: true },
+      { name: "Network Access, Security, LAN, WAN & VPN", highlight: true },
+      { name: "Embedded C++ in Arduino IDE", highlight: true },
     ],
   },
   {
@@ -177,6 +177,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: "tools",
     skills: [
       { name: "Windows 10 / 11 Administration", highlight: true },
+      { name: "Matlab", highlight: true },
       { name: "Cisco Packet Tracer (Topology simulation)", highlight: true },
       { name: "AnyDesk Remote Management & Support", highlight: true },
       { name: "GitHub Version Control & Repositories", highlight: true },
@@ -214,7 +215,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "Driving Simulation & Defensive Navigation", highlight: true },
       { name: "Manual & Automatic Car Driving (BRTA Licensed)", highlight: true },
       { name: "Vehicle Electrical Systems & Battery Testing", highlight: true },
-      { name: "Cooling & Transmission Mechanical Maintenance" },
+      { name: "Cooling & Transmission Mechanical Maintenance", highlight: true },
     ],
   },
 ];

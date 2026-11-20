@@ -10,6 +10,8 @@ import {
   Sparkles,
   Trophy,
   Mail,
+  FileText,
+  ExternalLink,
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { HERO_BADGES } from "@/data/portfolioData";
@@ -67,6 +69,27 @@ export function HeroSection() {
             <strong className="text-white">Institute of Science and Technology (IST)</strong> and Founder of{" "}
             <strong className="text-white">Nexhardtech Power Ltd.</strong> Specializing in real-world power systems, industrial 3-phase motor controlling, hybrid solar integration, embedded microcontrollers, and university research defense kits.
           </motion.p>
+
+          {/* View CV Action Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="pt-1"
+          >
+            <a
+              href="https://docs.google.com/document/d/1XcPpgylUSKyLxTRprZRmlki_LIZ6rSDb/edit?usp=sharing&ouid=106522051704488001705&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00FF88] to-emerald-400 text-[#08090A] font-heading font-bold text-sm tracking-wide shadow-lg shadow-[#00FF88]/20 hover:shadow-[#00FF88]/40 hover:scale-[1.03] active:scale-[0.98] transition-all group"
+              data-cursor-hover
+              data-cursor-text="CV"
+            >
+              <FileText className="w-4 h-4 text-[#08090A] group-hover:rotate-6 transition-transform" />
+              <span>View CV</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+            </a>
+          </motion.div>
 
           {/* All 9 Badges Strip */}
           <motion.div
