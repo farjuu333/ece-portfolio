@@ -113,7 +113,7 @@ export const PORTFOLIO_INFO = {
 
 export const HERO_BADGES = [
   "Founder @ Nexhardtech Power Ltd",
-  "ECE Student @ IST (4th Year, 7th Sem)",
+  "ECE Student @ NU",
   "NSDA Level-3 Certified",
   "CCNA Certified",
   "Basic Networking",

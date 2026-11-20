@@ -66,7 +66,7 @@ export function HeroSection() {
             className="text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-xl"
           >
             Electronics and Communication Engineering (ECE) student at the{" "}
-            <strong className="text-white">Institute of Science and Technology (IST)</strong> and Founder of{" "}
+            <strong className="text-white">Institute of Science and Technology (IST),National University Of Bangladesh</strong> and Founder of{" "}
             <strong className="text-white">Nexhardtech Power Ltd.</strong> Specializing in real-world power systems, industrial 3-phase motor controlling, hybrid solar integration, embedded microcontrollers, and university research defense kits.
           </motion.p>
 
