@@ -50,9 +50,7 @@ export function AchievementsVolunteeringSection() {
               Major Achievements &amp; Academic Honors
             </h2>
           </div>
-          <p className="text-sm text-[#94A3B8] max-w-lg leading-relaxed">
-            Distinguished department rank at IST, university project exhibition champion, and government professional driving licensing.
-          </p>
+
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -81,20 +79,18 @@ export function AchievementsVolunteeringSection() {
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between">
                       <div
-                        className={`p-3 rounded-xl border ${
-                          isGold
-                            ? "bg-amber-400/10 border-amber-400/30 text-amber-300"
-                            : "bg-[#00FF88]/10 border-[#00FF88]/30 text-[#00FF88]"
-                        }`}
+                        className={`p-3 rounded-xl border ${isGold
+                          ? "bg-amber-400/10 border-amber-400/30 text-amber-300"
+                          : "bg-[#00FF88]/10 border-[#00FF88]/30 text-[#00FF88]"
+                          }`}
                       >
                         <Icon className="w-6 h-6" />
                       </div>
                       <span
-                        className={`text-xs font-mono px-3 py-1 rounded-full border ${
-                          isGold
-                            ? "bg-amber-400/10 border-amber-400/25 text-amber-300"
-                            : "bg-white/5 border-white/10 text-emerald-400"
-                        }`}
+                        className={`text-xs font-mono px-3 py-1 rounded-full border ${isGold
+                          ? "bg-amber-400/10 border-amber-400/25 text-amber-300"
+                          : "bg-white/5 border-white/10 text-emerald-400"
+                          }`}
                       >
                         {item.highlight}
                       </span>
@@ -122,13 +118,12 @@ export function AchievementsVolunteeringSection() {
                   <div className="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between text-xs text-[#94A3B8]">
                     <span className="flex items-center gap-1.5 text-slate-300">
                       <CheckCircle2
-                        className={`w-3.5 h-3.5 ${
-                          isGold ? "text-amber-400" : "text-[#00FF88]"
-                        }`}
+                        className={`w-3.5 h-3.5 ${isGold ? "text-amber-400" : "text-[#00FF88]"
+                          }`}
                       />
                       Verified Honor
                     </span>
-                    <span className="font-mono text-[11px] text-[#00FF88]">IST ECE</span>
+
                   </div>
                 </GlassCard>
               </motion.div>
