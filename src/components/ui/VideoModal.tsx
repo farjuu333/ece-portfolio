@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Play } from "lucide-react";
+import { X, ExternalLink, Play, Image as ImageIcon } from "lucide-react";
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -10,6 +10,8 @@ interface VideoModalProps {
   videoTitle: string;
   youtubeId?: string;
   youtubeUrl?: string;
+  videoLink?: string;
+  imageLink?: string;
 }
 
 export function VideoModal({
@@ -18,6 +20,8 @@ export function VideoModal({
   videoTitle,
   youtubeId,
   youtubeUrl,
+  videoLink,
+  imageLink,
 }: VideoModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -36,6 +40,15 @@ export function VideoModal({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, onClose]);
+
+  const effectiveYoutubeUrl = videoLink || youtubeUrl;
+  const effectiveYoutubeId =
+    youtubeId ||
+    (effectiveYoutubeUrl
+      ? effectiveYoutubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/)?.[1]
+      : undefined);
+
+  const isImageMode = !effectiveYoutubeId && Boolean(imageLink);
 
   return (
     <AnimatePresence>
@@ -66,7 +79,11 @@ export function VideoModal({
             <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-white/[0.02]">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-[#00FF88]">
-                  <Play className="w-4 h-4 fill-current" />
+                  {isImageMode ? (
+                    <ImageIcon className="w-4 h-4" />
+                  ) : (
+                    <Play className="w-4 h-4 fill-current" />
+                  )}
                 </div>
                 <div>
                   <h3
@@ -76,20 +93,22 @@ export function VideoModal({
                     {videoTitle}
                   </h3>
                   <p className="text-xs text-[#94A3B8]">
-                    Hardware Demonstration &amp; Working Prototype
+                    {isImageMode
+                      ? "Hardware Showcase & Documentation"
+                      : "Hardware Demonstration & Working Prototype"}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2">
-                {youtubeUrl && (
+                {(effectiveYoutubeUrl || imageLink) && (
                   <a
-                    href={youtubeUrl}
+                    href={effectiveYoutubeUrl || imageLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-xl text-[#94A3B8] hover:text-white hover:bg-white/5 transition-colors"
-                    title="Open on YouTube"
-                    aria-label="Open on YouTube"
+                    title={effectiveYoutubeUrl ? "Open on YouTube" : "Open Original Image"}
+                    aria-label={effectiveYoutubeUrl ? "Open on YouTube" : "Open Original Image"}
                   >
                     <ExternalLink className="w-4 h-4" />
                   </a>
@@ -104,21 +123,29 @@ export function VideoModal({
               </div>
             </div>
 
-            {/* Video Player Embed */}
-            <div className="relative w-full aspect-video bg-black/80">
-              {youtubeId ? (
+            {/* Video Player or Image Embed */}
+            <div className="relative w-full aspect-video bg-black/90 flex items-center justify-center overflow-hidden">
+              {effectiveYoutubeId ? (
                 <iframe
                   className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
+                  src={`https://www.youtube.com/embed/${effectiveYoutubeId}?autoplay=1&rel=0`}
                   title={videoTitle}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
+              ) : isImageMode && imageLink ? (
+                <div className="relative w-full h-full flex items-center justify-center bg-black/50 p-4">
+                  <img
+                    src={imageLink}
+                    alt={videoTitle}
+                    className="max-w-full max-h-full object-contain rounded-lg shadow-xl"
+                  />
+                </div>
               ) : (
                 <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center gap-3">
                   <Play className="w-12 h-12 text-[#00FF88]/40" />
                   <p className="text-sm text-slate-300">
-                    Video stream preview initializing for {videoTitle}.
+                    Preview initializing for {videoTitle}.
                   </p>
                 </div>
               )}

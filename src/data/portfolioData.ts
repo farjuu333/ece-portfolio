@@ -7,6 +7,8 @@ export interface ProjectItem {
   keyComponents: string[];
   youtubeId?: string;
   youtubeUrl?: string;
+  videoLink?: string;
+  imageLink?: string;
   isChampion?: boolean;
   awardText?: string;
   featured?: boolean;
@@ -21,6 +23,7 @@ export interface TrainingItem {
   levelBadge?: string;
   category: "technical" | "networking" | "robotics" | "general" | "solar";
   topics: string[];
+  certificateUrl?: string;
 }
 
 export interface AchievementItem {
@@ -103,7 +106,8 @@ export const PORTFOLIO_INFO = {
     email: "mailto:mknoyon.ece@gmail.com",
     linkedin: "https://www.linkedin.com/in/md-morsalin-khan-noyon-b28918282/",
     github: "https://github.com/mdmorsalinkhannoyon",
-    portfolio: "https://sites.google.com/view/md-morsalin-khan-noyon/home",
+    youtube: "https://www.youtube.com/@Nexhardtech",
+    portfolio: "https://www.youtube.com/@Nexhardtech",
   },
 };
 
@@ -229,6 +233,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Channel Wiring & Conduit Pipe Wiring",
       "3-Phase Motor Controlling (Star-Delta & DOL)",
     ],
+    certificateUrl: "https://drive.google.com/file/d/19KX6BaFqSCkSyFS_VQ5MJF2Y2GYmmNTP/view",
   },
   {
     id: "nsda-construction-l3",
@@ -243,6 +248,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "CCTV Connection & Operation",
       "IPS Connection & Operation",
     ],
+    certificateUrl: "https://drive.google.com/file/d/1mDhyAmJ046nlD87u8ynmn3ay146X4lX6/view",
   },
   {
     id: "nsda-eim-l2",
@@ -257,6 +263,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Motor Test & Insulation Quality Inspection",
       "Solar System Connection & Operation, Electrical Maintenance",
     ],
+    certificateUrl: "https://drive.google.com/file/d/15qzljg-n4tu5pxF-vj__rlIryM2suPuu/view",
   },
   {
     id: "ccna-skillforge",
@@ -273,6 +280,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Routing Protocols & Switching Infrastructure",
       "LAN & WAN Architecture",
     ],
+    certificateUrl: "https://drive.google.com/file/d/1DMptqmxGqQP10U0RxoOVjdz3NSeJL-Gv/view",
   },
   {
     id: "solar-energy-guide",
@@ -287,6 +295,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Grid-to-solar & solar-to-grid switching",
       "DC current generation, off-grid & on-grid systems",
     ],
+    certificateUrl: "https://drive.google.com/file/d/1GED-jcUsAFcq6Dgt_lNYUwakoN7W9XGn/view",
   },
   {
     id: "robotics-automation",
@@ -302,6 +311,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Application of multi-sensory detectors",
       "Wireless communications & remote RF control",
     ],
+    certificateUrl: "https://drive.google.com/file/d/1eotiCdhNA0UAwknEj79erY8_hiRCfpzB/view",
   },
   {
     id: "digital-security-essentials",
@@ -315,6 +325,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Security practices when using Facebook, Email, and Internet",
       "Preventing credential theft & privacy hygiene",
     ],
+    certificateUrl: "https://drive.google.com/file/d/11XEURCxX9ib4-B5sztXFyAGsUIJS0nIl/view",
   },
   {
     id: "mttc-driving-automechanics",
@@ -328,6 +339,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Mechanical testing & engine maintenance",
       "Road safety, traffic regulations & emergency diagnosis",
     ],
+    certificateUrl: "https://drive.google.com/file/d/1NTMw96Pdkldc9KhmD5bCWjbtV2U4DGTp/view",
   },
   {
     id: "daffodil-computer-application",
@@ -342,6 +354,7 @@ export const TRAINING_CERTIFICATIONS: TrainingItem[] = [
       "Microsoft PowerPoint for engineering presentations",
       "Web browsing, email creating, photo editing & file management",
     ],
+    certificateUrl: "https://drive.google.com/file/d/142CPHAeAvJGDsLwE37NjT4zDwSXiDzrT/view",
   },
 ];
 
@@ -423,8 +436,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "An advanced walking stick for visually impaired individuals utilizing HC-SR04 ultrasonic echo ranging for directional obstacles, haptic buzzer vibration alerts, and water detection probe to prevent slip hazards.",
     keyComponents: ["Ultrasonic HC-SR04", "Arduino Nano", "Vibration Motor", "Piezo Buzzer", "Conductivity Water Probe"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "hDwBFrm6Tew",
+    youtubeUrl: "https://www.youtube.com/watch?v=hDwBFrm6Tew",
+    videoLink: "https://www.youtube.com/watch?v=hDwBFrm6Tew",
     featured: true,
   },
   {
@@ -435,8 +449,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Intelligent dual-source energy backup and charging ecosystem combining photovoltaic solar harvesting with grid electricity. Features automatic source switching, fast battery protection, overcharge cutoff, and live voltage telemetry.",
     keyComponents: ["Solar PV Cell", "12V Battery Bank", "Auto Transfer Relay", "Voltage Regulator", "PWM Control"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "MqkXpHoPgsE",
+    youtubeUrl: "https://www.youtube.com/watch?v=MqkXpHoPgsE",
+    videoLink: "https://www.youtube.com/watch?v=MqkXpHoPgsE",
     isChampion: true,
     awardText: "🏆 Champion — IST Project Exhibition 2025",
     featured: true,
@@ -449,8 +464,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Automated parking architecture with IR obstacle tracking at entry/exit gates, automatic servo boom barriers, and a real-time LCD counter showing available slots to eliminate parking congestion.",
     keyComponents: ["IR Sensors", "Microcontroller", "SG90 Servo Gates", "16x2 I2C LCD", "Status LEDs"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "NQ7wAZEfnZA",
+    youtubeUrl: "https://www.youtube.com/watch?v=NQ7wAZEfnZA",
+    videoLink: "https://www.youtube.com/watch?v=NQ7wAZEfnZA",
     featured: true,
   },
   {
@@ -461,8 +477,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Smart domestic utility that detects precipitation via an analog raindrop sensor and triggers a motorized rack mechanism to automatically pull laundry under roof shelter, returning it when dry.",
     keyComponents: ["Raindrop Sensor", "High-Torque Servo/DC Motor", "Rack & Pinion Mechanism", "Arduino", "Limit Switches"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "JSVcn3HLerE",
+    youtubeUrl: "https://www.youtube.com/watch?v=JSVcn3HLerE",
+    videoLink: "https://www.youtube.com/watch?v=JSVcn3HLerE",
     featured: true,
   },
   {
@@ -473,8 +490,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Compact health-tech monitoring system utilizing the MAX30102 optical sensor to capture optical pulses from the fingertip, computing real-time beats per minute (BPM) and blood oxygen saturation displayed on an LCD.",
     keyComponents: ["MAX30102 PPG Sensor", "Arduino Uno", "16x2 I2C LCD Display", "BPM Algorithm", "Buzzer Alert"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    imageLink: "https://media.licdn.com/dms/image/v2/D562DAQE1mAJ1AUiUpA/profile-treasury-image-shrink_1280_1280/B56Z.iX617KAAY-/0/1785135607452?e=1795752000&v=beta&t=ig6j6rJwObLqozgY93SBRNnce0ZdhPQvp0seO-8QI7c",
     featured: true,
   },
   {
@@ -485,8 +501,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Dual-axis tracking rig using 4 Light Dependent Resistors (LDRs) and servo motors that continuously aligns solar panels perpendicular to sunlight, increasing energy yield by up to 35%.",
     keyComponents: ["4x LDR Sensors", "Micro-Servos", "Mini Solar Panel", "Comparator Circuit", "Arduino"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "qbEHvEDnR90",
+    youtubeUrl: "https://www.youtube.com/watch?v=qbEHvEDnR90",
+    videoLink: "https://www.youtube.com/watch?v=qbEHvEDnR90",
     featured: false,
   },
   {
@@ -497,8 +514,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Custom programmed arcade game running directly on Arduino with custom bitmap sprites created for 16x2 LCD character blocks, collision detection, and tactile jump button control.",
     keyComponents: ["Arduino Uno", "16x2 HD44780 LCD", "Tactile Push Button", "Custom Bitmaps", "Collision Logic"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "brPwX4z6teE",
+    youtubeUrl: "https://www.youtube.com/watch?v=brPwX4z6teE",
+    videoLink: "https://www.youtube.com/watch?v=brPwX4z6teE",
     featured: false,
   },
   {
@@ -509,8 +527,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Interactive steady-hand reflex circuit with instant conductivity detection, strike buzzer, and digital penalty counter.",
     keyComponents: ["Conductive Wire Track", "Transistor Latch", "Piezo Buzzer", "Digital Counter"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "NOw_FjMA69A",
+    youtubeUrl: "https://www.youtube.com/watch?v=NOw_FjMA69A",
+    videoLink: "https://www.youtube.com/watch?v=NOw_FjMA69A",
     featured: false,
   },
   {
@@ -521,8 +540,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Human-presence based room automation that automatically switches 220V AC ceiling fans and LED fixtures on upon entry and cuts power after inactivity.",
     keyComponents: ["PIR Sensor", "Optocoupler Isolated Relays", "220V AC Load", "Delay Timer"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "Y8EKjKwmdew",
+    youtubeUrl: "https://www.youtube.com/watch?v=Y8EKjKwmdew",
+    videoLink: "https://www.youtube.com/watch?v=Y8EKjKwmdew",
     featured: false,
   },
   {
@@ -533,8 +553,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Rapid-response emergency detector integrating an IR flame detector and gas sensor to trigger localized sirens, visual strobe beacons, and emergency ventilation.",
     keyComponents: ["Flame Sensor", "MQ-2 Sensor", "High-Decibel Siren", "Transistor Driver", "LED Strobe"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "nNzBXBWf_kg",
+    youtubeUrl: "https://www.youtube.com/watch?v=nNzBXBWf_kg",
+    videoLink: "https://www.youtube.com/watch?v=nNzBXBWf_kg",
     featured: false,
   },
   {
@@ -545,8 +566,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Autonomous outdoor lighting system with hysteresis comparator to prevent flicker at dusk, switching on illumination at nightfall and off at sunrise.",
     keyComponents: ["LDR Sensor", "LM358 Op-Amp", "Relay / Triac", "LED Luminaire"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "qxILtzay3V0",
+    youtubeUrl: "https://www.youtube.com/watch?v=qxILtzay3V0",
+    videoLink: "https://www.youtube.com/watch?v=qxILtzay3V0",
     featured: false,
   },
   {
@@ -557,8 +579,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Awakens users gradually as natural sunrise enters the room, utilizing ambient optical threshold sensing combined with gentle sound generation.",
     keyComponents: ["LDR Optical Sensor", "Tone Generator", "Volume Potentiometer", "ATtiny/Arduino"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "zQZ5OAThotg",
+    youtubeUrl: "https://www.youtube.com/watch?v=zQZ5OAThotg",
+    videoLink: "https://www.youtube.com/watch?v=zQZ5OAThotg",
     featured: false,
   },
   {
@@ -569,8 +592,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Security alert module utilizing high-sensitivity pyroelectric motion detection to guard doors and windows, armed with silent triggers and loud siren deterrence.",
     keyComponents: ["PIR Motion Sensor HC-SR501", "555 Timer / Nano", "Buzzer", "Relay Switch"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "ry0sTD9ZdnA",
+    youtubeUrl: "https://www.youtube.com/watch?v=ry0sTD9ZdnA",
+    videoLink: "https://www.youtube.com/watch?v=ry0sTD9ZdnA",
     featured: false,
   },
   {
@@ -581,8 +605,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Modern bedside desk light toggled on and off with a simple hand wave over an optical sensor, complete with smooth PWM dimming.",
     keyComponents: ["Proximity Photodiode", "PWM Driver", "12V Warm LED Strip", "Microcontroller"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "-6Y3yOryFnc",
+    youtubeUrl: "https://www.youtube.com/watch?v=-6Y3yOryFnc",
+    videoLink: "https://www.youtube.com/watch?v=-6Y3yOryFnc",
     featured: false,
   },
   {
@@ -593,8 +618,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Automated plant watering module that samples soil capacitance, automatically turning on a submersible water pump relay when dryness thresholds are breached and shutting off when saturated.",
     keyComponents: ["Capacitive Soil Moisture Sensor", "5V Relay Module", "Submersible DC Pump", "LED Status Bar"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "xuLtyDgHT1I",
+    youtubeUrl: "https://www.youtube.com/watch?v=xuLtyDgHT1I",
+    videoLink: "https://www.youtube.com/watch?v=xuLtyDgHT1I",
     featured: false,
   },
   {
@@ -605,8 +631,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Non-contact hygiene system using proximity infrared reflection to actuate a 5V peristaltic liquid pump, dispensing a precise dosage without surface touch.",
     keyComponents: ["TCRT5000 IR Sensor", "MOSFET Switch", "5V Mini Pump", "Sanitizer Reservoir"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    imageLink: "https://media.licdn.com/dms/image/sync/v2/D5627AQHJC7rAea4IMw/articleshare-shrink_1280_800/articleshare-shrink_1280_800/0/1712092503641?e=1795752000&v=beta&t=gw6LaLLD2lXZb8ScGTy16HPLMqX-27X4qsY7BrcJ5uU",
     featured: false,
   },
   {
@@ -617,8 +642,9 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Autonomous 2WD vehicle programmed with real-time distance PID-like tracking to follow a moving target at a fixed safe distance while avoiding collisions.",
     keyComponents: ["L298N Motor Driver", "HC-SR04 Sensor", "Chassis & DC Motors", "Arduino Uno", "Li-ion Battery Pack"],
-    youtubeId: "dQw4w9WgXcQ",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeId: "sGSRH83Sv58",
+    youtubeUrl: "https://www.youtube.com/watch?v=sGSRH83Sv58",
+    videoLink: "https://www.youtube.com/watch?v=sGSRH83Sv58",
     featured: false,
   },
 ];

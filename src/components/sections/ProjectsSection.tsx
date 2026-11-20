@@ -13,6 +13,7 @@ import {
   Sparkles,
   ExternalLink,
   Zap,
+  Image as ImageIcon,
 } from "lucide-react";
 
 export function ProjectsSection() {
@@ -145,19 +146,31 @@ export function ProjectsSection() {
                     onClick={() => setActiveVideoProject(project)}
                     className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-white/[0.05] hover:bg-[#00FF88]/15 border border-white/10 hover:border-[#00FF88]/40 text-xs font-medium text-white transition-all group/btn"
                     data-cursor-hover
-                    data-cursor-text="Video"
+                    data-cursor-text={project.imageLink && !project.videoLink && !project.youtubeUrl ? "Image" : "Video"}
                   >
-                    <Play className="w-3.5 h-3.5 text-[#00FF88] fill-current group-hover/btn:scale-110 transition-transform" />
-                    <span>Watch Video Demo</span>
+                    {project.imageLink && !project.videoLink && !project.youtubeUrl ? (
+                      <ImageIcon className="w-3.5 h-3.5 text-[#00FF88] group-hover/btn:scale-110 transition-transform" />
+                    ) : (
+                      <Play className="w-3.5 h-3.5 text-[#00FF88] fill-current group-hover/btn:scale-110 transition-transform" />
+                    )}
+                    <span>
+                      {project.imageLink && !project.videoLink && !project.youtubeUrl
+                        ? "View Project Image"
+                        : "Watch Video Demo"}
+                    </span>
                   </button>
 
-                  {project.youtubeUrl && (
+                  {(project.videoLink || project.youtubeUrl || project.imageLink) && (
                     <a
-                      href={project.youtubeUrl}
+                      href={project.videoLink || project.youtubeUrl || project.imageLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-[#94A3B8] hover:text-white hover:bg-white/[0.08] transition-colors"
-                      title="Open YouTube Link"
+                      title={
+                        project.imageLink && !project.videoLink && !project.youtubeUrl
+                          ? "Open Image Link"
+                          : "Open YouTube Link"
+                      }
                       data-cursor-hover
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -176,7 +189,9 @@ export function ProjectsSection() {
         onClose={() => setActiveVideoProject(null)}
         videoTitle={activeVideoProject?.title || ""}
         youtubeId={activeVideoProject?.youtubeId}
-        youtubeUrl={activeVideoProject?.youtubeUrl}
+        youtubeUrl={activeVideoProject?.videoLink || activeVideoProject?.youtubeUrl}
+        videoLink={activeVideoProject?.videoLink}
+        imageLink={activeVideoProject?.imageLink}
       />
     </section>
   );

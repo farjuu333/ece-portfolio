@@ -14,6 +14,7 @@ import {
   Calendar,
   Building,
   Sun,
+  ExternalLink,
 } from "lucide-react";
 
 export function TrainingCertificationsSection() {
@@ -74,13 +75,12 @@ export function TrainingCertificationsSection() {
                   {/* Top Bar with Icon & Duration Badge */}
                   <div className="flex items-start justify-between gap-3">
                     <div
-                      className={`p-3 rounded-xl border ${
-                        isNsda
+                      className={`p-3 rounded-xl border ${isNsda
                           ? "bg-[#00FF88]/10 border-[#00FF88]/30 text-[#00FF88]"
                           : isCcna
-                          ? "bg-cyan-500/10 border-cyan-500/30 text-cyan-400"
-                          : "bg-white/[0.04] border-white/10 text-emerald-400"
-                      }`}
+                            ? "bg-cyan-500/10 border-cyan-500/30 text-cyan-400"
+                            : "bg-white/[0.04] border-white/10 text-emerald-400"
+                        }`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
@@ -130,10 +130,36 @@ export function TrainingCertificationsSection() {
                   </div>
                 </div>
 
-                <div className="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between text-xs text-[#94A3B8]">
-                  <span className="text-slate-400">Official Certification</span>
-                  <span className="font-mono text-[11px] text-[#00FF88]">Verified</span>
-                </div>
+                {item.certificateUrl ? (
+                  <a
+                    href={item.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between text-xs text-[#94A3B8] hover:border-white/20 transition-all group/cert"
+                    title={`View ${item.title} Certificate`}
+                    data-cursor-hover
+                    data-cursor-text="Certificate"
+                  >
+                    <span className="text-slate-400 group-hover/cert:text-slate-200 transition-colors">
+                      Official Certification
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-[#00FF88] px-2.5 py-1 rounded-md bg-[#00FF88]/10 border border-[#00FF88]/20 group-hover/cert:bg-[#00FF88]/20 group-hover/cert:border-[#00FF88]/40 transition-all shadow-sm">
+                      <span>Verified</span>
+                      <span className="text-[#00FF88]/40">•</span>
+                      <span className="text-slate-200 group-hover/cert:text-white flex items-center gap-1 font-sans font-medium">
+                        <span>
+                          View<span className="hidden sm:inline"> Certificate</span>
+                        </span>
+                        <ExternalLink className="w-3 h-3 group-hover/cert:translate-x-0.5 group-hover/cert:-translate-y-0.5 transition-transform shrink-0" />
+                      </span>
+                    </span>
+                  </a>
+                ) : (
+                  <div className="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between text-xs text-[#94A3B8]">
+                    <span className="text-slate-400">Official Certification</span>
+                    <span className="font-mono text-[11px] text-[#00FF88]">Verified</span>
+                  </div>
+                )}
               </GlassCard>
             </motion.div>
           );

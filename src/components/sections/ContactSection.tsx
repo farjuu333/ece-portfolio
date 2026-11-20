@@ -11,10 +11,9 @@ import {
   Send,
   CheckCircle,
   Sparkles,
-  Globe,
   ArrowUpRight,
 } from "lucide-react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -171,14 +170,14 @@ export function ContactSection() {
                   <span className="text-[11px] font-mono">GitHub</span>
                 </a>
                 <a
-                  href={PORTFOLIO_INFO.socials.portfolio}
+                  href={PORTFOLIO_INFO.socials.youtube || "https://www.youtube.com/@Nexhardtech"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#00FF88]/40 hover:bg-[#00FF88]/5 transition-all text-slate-300 hover:text-[#00FF88] gap-1.5"
                   data-cursor-hover
                 >
-                  <Globe className="w-5 h-5 text-[#00FF88]" />
-                  <span className="text-[11px] font-mono">Portfolio</span>
+                  <FaYoutube className="w-5 h-5 text-[#00FF88]" />
+                  <span className="text-[11px] font-mono">YouTube</span>
                 </a>
               </div>
             </div>

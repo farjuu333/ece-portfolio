@@ -10,8 +10,6 @@ import {
   Sparkles,
   Trophy,
   Mail,
-  ShieldCheck,
-  Cpu,
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { HERO_BADGES } from "@/data/portfolioData";
@@ -34,7 +32,7 @@ export function HeroSection() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00FF88]"></span>
             </span>
             <span className="font-mono text-slate-200">
-              Founder &amp; ECE Hardware Specialist
+              Founder of Nexhardtech ,Hardware,IoT & Robotics,Research & Tech Enthusiast
             </span>
             <Sparkles className="w-3.5 h-3.5 text-[#00FF88]" />
           </motion.div>
@@ -145,58 +143,8 @@ export function HeroSection() {
                   sizes="(max-width: 768px) 320px, 400px"
                   className="object-cover object-top transition-transform duration-700 group-hover/avatar:scale-105"
                 />
-
-                {/* Subtle Inner Glass Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08090A]/90 via-transparent to-transparent pointer-events-none" />
-
-                {/* Bottom Overlay Label */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl glass-panel border border-white/10 flex items-center justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold text-white font-heading">
-                      Md. Morsalin Khan Noyon
-                    </span>
-                    <span className="text-[10px] text-[#00FF88] font-mono">
-                      Founder @ Nexhardtech Power Ltd.
-                    </span>
-                  </div>
-                  <span className="p-1.5 rounded-lg bg-emerald-500/10 text-[#00FF88]">
-                    <ShieldCheck className="w-4 h-4" />
-                  </span>
-                </div>
               </div>
             </div>
-
-            {/* Floating Floating Pill: 1st Semester Dept. 1st */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
-              className="absolute -top-4 -left-4 sm:-left-6 px-3.5 py-2 rounded-xl glass-panel border border-amber-400/30 bg-[#0D0F12]/90 shadow-xl flex items-center gap-2"
-            >
-              <Trophy className="w-4 h-4 text-amber-400" />
-              <div className="flex flex-col text-left">
-                <span className="text-[10px] font-mono text-amber-300 font-bold">
-                  Dept. 1st • Semester 1
-                </span>
-                <span className="text-[9px] text-slate-300">IST ECE Cohort</span>
-              </div>
-            </motion.div>
-
-            {/* Floating Pill: Exhibition Champion */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7 }}
-              className="absolute -bottom-4 -right-2 sm:-right-4 px-3.5 py-2 rounded-xl glass-panel border border-[#00FF88]/40 bg-[#0D0F12]/90 shadow-xl flex items-center gap-2"
-            >
-              <Cpu className="w-4 h-4 text-[#00FF88]" />
-              <div className="flex flex-col text-left">
-                <span className="text-[10px] font-mono text-[#00FF88] font-bold">
-                  Exhibition Champion
-                </span>
-                <span className="text-[9px] text-slate-300">ECO CHARGER 2025</span>
-              </div>
-            </motion.div>
           </div>
         </motion.div>
       </div>

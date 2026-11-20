@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Zap } from "lucide-react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { name: "Home", href: "#home" },
@@ -29,9 +30,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? "py-2.5 glass-nav" : "py-4 bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? "py-2.5 glass-nav" : "py-4 bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -42,11 +42,16 @@ export function Navbar() {
             data-cursor-hover
             data-cursor-text="Home"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 group-hover:border-[#00FF88]/50 transition-colors">
-              <span className="font-heading font-black text-lg tracking-tighter text-white group-hover:text-[#00FF88] transition-colors">
-                N
-              </span>
-              <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+            <div className="relative">
+              <Image
+                src="/images/noyon.jpeg"
+                alt="Md. Morsalin Khan Noyon"
+                width={36}
+                height={36}
+                priority
+                className="w-9 h-9 rounded-full object-cover border border-slate-700 group-hover:border-[#00FF88]/50 transition-colors"
+              />
+              <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FF88] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00FF88]"></span>
               </span>

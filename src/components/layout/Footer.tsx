@@ -2,8 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Mail, ArrowUpRight, Cpu, MapPin, Phone, Globe } from "lucide-react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { Mail, ArrowUpRight, Cpu, MapPin, Phone } from "lucide-react";
+import { FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import { PORTFOLIO_INFO } from "@/data/portfolioData";
 
 export function Footer() {
@@ -69,15 +69,16 @@ export function Footer() {
                 <FaLinkedinIn className="w-4 h-4" />
               </a>
               <a
-                href={PORTFOLIO_INFO.socials.portfolio}
+                href={PORTFOLIO_INFO.socials.youtube || "https://www.youtube.com/@Nexhardtech"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-[#94A3B8] hover:text-[#00FF88] hover:border-[#00FF88]/40 transition-colors flex items-center gap-1.5 text-xs font-mono"
-                title="Google Sites Portfolio"
+                title="YouTube Channel"
+                aria-label="YouTube Channel"
                 data-cursor-hover
               >
-                <Globe className="w-4 h-4 text-[#00FF88]" />
-                <span className="hidden sm:inline">Sites Portfolio</span>
+                <FaYoutube className="w-4 h-4 text-[#00FF88]" />
+                {/* <span className="hidden sm:inline">YouTube</span> */}
               </a>
               <a
                 href={`mailto:${PORTFOLIO_INFO.email}`}
